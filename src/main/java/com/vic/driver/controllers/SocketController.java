@@ -1,7 +1,6 @@
 package com.vic.driver.controllers;
 
 import com.vic.driver.services.SocketService;
-import com.vic.driver.services.CustmStompSessionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
