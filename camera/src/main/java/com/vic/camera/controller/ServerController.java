@@ -11,12 +11,13 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class ServerController {
+
 	Logger logger = LoggerFactory.getLogger(ServerController.class);
 
 	@MessageMapping("/process-message")
 	@SendTo("/topic/messages")
 	public IncomingMessage processMessage(OutgoingMessage incomingMessage) {
 		logger.info(incomingMessage.getContent());
-		return new IncomingMessage("Hello " + incomingMessage.getContent() + ". \n Welcome to this jungle!!!!");
+		return new IncomingMessage("\n Hello " + incomingMessage.getContent() + ". \n Welcome to this jungle!!!!");
 	}
 }

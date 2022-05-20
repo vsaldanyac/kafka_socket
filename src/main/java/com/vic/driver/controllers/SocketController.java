@@ -14,10 +14,8 @@ import java.util.concurrent.ExecutionException;
 @Controller
 public class SocketController {
 
-
 	@Autowired
 	SocketService socketService;
-
 
 	@GetMapping("/init")
 	public ResponseEntity<?> initSocket() throws ExecutionException, InterruptedException {

@@ -1,6 +1,7 @@
 package com.vic.driver.entities;
 
 public class OutgoingMessage {
+
 	private String content;
 
 	public OutgoingMessage(String content) {

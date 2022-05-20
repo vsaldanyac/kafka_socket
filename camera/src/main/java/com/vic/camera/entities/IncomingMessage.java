@@ -1,6 +1,7 @@
 package com.vic.camera.entities;
 
 public class IncomingMessage {
+
 	private String name;
 
 	public String getName() {
