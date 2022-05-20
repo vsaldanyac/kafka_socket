@@ -15,8 +15,8 @@ public class ServerController {
 
 	@MessageMapping("/process-message")
 	@SendTo("/topic/messages")
-	public String processMessage(String incomingMessage) throws Exception {
-		logger.info(incomingMessage);
-		return "Hello " + incomingMessage;
+	public IncomingMessage processMessage(OutgoingMessage incomingMessage) {
+		logger.info(incomingMessage.getContent());
+		return new IncomingMessage("Hello " + incomingMessage.getContent() + ". \n Welcome to this jungle!!!!");
 	}
 }

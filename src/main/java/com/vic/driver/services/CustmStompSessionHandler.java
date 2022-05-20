@@ -1,5 +1,6 @@
 package com.vic.driver.services;
 
+import com.vic.driver.entities.IncomingMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,23 +20,24 @@ import java.lang.reflect.Type;
 import java.net.URI;
 import java.util.concurrent.ExecutionException;
 
-@Service
-public class VicWebSocketClient {
-	Logger logger = LoggerFactory.getLogger(VicWebSocketClient.class);
+public class CustmStompSessionHandler implements StompSessionHandler {
 
+	Logger logger = LoggerFactory.getLogger(CustmStompSessionHandler.class);
 
-	public void openConnection() throws ExecutionException, InterruptedException {
-		WebSocketStompClient stompClient = new WebSocketStompClient(new WebSocketClient() {
-			@Override public ListenableFuture<WebSocketSession> doHandshake(WebSocketHandler webSocketHandler, String uriTemplate, Object... uriVariables) {
-				logger.info("doHandshake");
-				return null;
-			}
-			@Override public ListenableFuture<WebSocketSession> doHandshake(WebSocketHandler webSocketHandler, WebSocketHttpHeaders headers, URI uri) {
-				logger.info("doHandshake");
-				return null;
-			}
-		});
-
+	@Override public void afterConnected(StompSession session, StompHeaders connectedHeaders) {
+		logger.info("afterConnected");
+	}
+	@Override public void handleException(StompSession session, StompCommand command, StompHeaders headers, byte[] payload, Throwable exception) {
+		logger.info("handleException");
+	}
+	@Override public void handleTransportError(StompSession session, Throwable exception) {
+		logger.info("handleTransportError");
+	}
+	@Override public Type getPayloadType(StompHeaders headers) {
+		return IncomingMessage.class;
+	}
+	@Override public void handleFrame(StompHeaders headers, Object payload) {
+		logger.info(((IncomingMessage)payload).getName());
 	}
 }
 
