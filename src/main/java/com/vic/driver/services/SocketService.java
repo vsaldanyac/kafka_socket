@@ -6,5 +6,10 @@ import java.util.concurrent.ExecutionException;
 public interface SocketService {
 
 	void subscribe() throws ExecutionException, InterruptedException;
-	void send(String name);
+
+	void send(Object name);
+
+	void disconnect();
+
+
 }
