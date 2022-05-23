@@ -1,4 +1,4 @@
-package com.vic.driver.entities;
+package com.vic.common;
 
 
 import java.util.Date;
@@ -7,9 +7,9 @@ import java.util.Date;
 public class CommonEntity {
 
 	private String id;
-	private Date dtCreated;
-	private Date dtUpdated;
-	private Date dtDeleted;
+	private Date   dtCreated;
+	private Date   dtUpdated;
+	private Date   dtDeleted;
 	private String dataspace;
 	private String lastUser;
 
