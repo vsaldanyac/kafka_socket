@@ -1,5 +1,8 @@
 package com.vic.driver.entities;
 
+import com.vic.common.CommonEntity;
+
+
 public class Brand extends CommonEntity {
 
 	private int                        code;

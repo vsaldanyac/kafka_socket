@@ -1,5 +1,6 @@
 package com.vic.driver.entities;
 
+import com.vic.common.CommonEntity;
 import com.vic.driver.entities.enums.Status;
 
 import javax.print.attribute.standard.Severity;
