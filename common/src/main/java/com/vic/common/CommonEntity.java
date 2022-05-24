@@ -1,6 +1,5 @@
 package com.vic.common;
 
-
 import java.util.Date;
 
 
