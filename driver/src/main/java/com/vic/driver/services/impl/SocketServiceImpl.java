@@ -31,7 +31,7 @@ public class SocketServiceImpl implements SocketService {
 
 		CustmStompSessionHandler clientOneSessionHandler = new CustmStompSessionHandler();
 		ListenableFuture<StompSession> sessionAsync =
-				stompClient.connect("ws://vicCamera:8090/websocket-server", clientOneSessionHandler);
+				stompClient.connect("ws://camera:8090/websocket-server", clientOneSessionHandler);
 		session = sessionAsync.get();
 		session.subscribe("/topic/messages", clientOneSessionHandler);
 	}

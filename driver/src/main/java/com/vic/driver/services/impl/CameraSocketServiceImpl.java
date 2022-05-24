@@ -29,7 +29,7 @@ public class CameraSocketServiceImpl implements SocketService {
 
 		CameraStompSessionHandler clientOneSessionHandler = new CameraStompSessionHandler();
 		ListenableFuture<StompSession> sessionAsync =
-				stompClient.connect("ws://vicCamera:8090/camera-broadcast", clientOneSessionHandler);
+				stompClient.connect("ws://camera:8090/camera-broadcast", clientOneSessionHandler);
 		session = sessionAsync.get();
 		session.subscribe("/topic/camera", clientOneSessionHandler);
 	}

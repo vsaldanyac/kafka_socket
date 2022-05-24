@@ -1,0 +1,15 @@
+version: '3'
+services:
+  camera:
+    build:
+      context: ./camera
+    ports:
+      - 8090:8090
+    container_name: vicCamera
+
+  driver:
+    build:
+      context: ./driver
+    ports:
+      - 8080:8080
+    container_name: vicDriver
