@@ -19,7 +19,7 @@ public class CameraStompSessionHandler implements StompSessionHandler {
 	Logger logger = LoggerFactory.getLogger(CustmStompSessionHandler.class);
 
 	@Override public void afterConnected(StompSession session, StompHeaders connectedHeaders) {
-		logger.info("afterConnected");
+		logger.info("afterConnected on plate sender");
 	}
 	@Override public void handleException(StompSession session, StompCommand command, StompHeaders headers, byte[] payload, Throwable exception) {
 		logger.info("handleException");
