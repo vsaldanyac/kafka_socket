@@ -1,6 +1,7 @@
 package com.vic.driver.controllers;
 
 import com.vic.driver.entities.CameraRead;
+import com.vic.driver.repository.CameraRepository;
 import com.vic.driver.services.SocketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,6 +19,9 @@ public class CameraController {
 	@Qualifier("cameraService") @Autowired
 	SocketService socketService;
 
+	@Autowired
+	CameraRepository cameraRepository;
+
 
 
 	@GetMapping("/init")
@@ -29,6 +33,12 @@ public class CameraController {
 	@PostMapping("/send")
 	public ResponseEntity<?> sendSocket(@RequestBody CameraRead plate) {
 		socketService.send(plate);
+		return new ResponseEntity<>("OK", HttpStatus.OK);
+	}
+
+	@PostMapping("/save")
+	public ResponseEntity<?> saveCamera(@RequestBody CameraRead plate) {
+		cameraRepository.save(plate);
 		return new ResponseEntity<>("OK", HttpStatus.OK);
 	}
 
