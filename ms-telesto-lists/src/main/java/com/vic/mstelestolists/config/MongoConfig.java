@@ -1,4 +1,4 @@
-package com.vic.driver.config;
+package com.vic.mstelestolists.config;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -11,18 +11,18 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.vic.driver.repository")
+@EnableMongoRepositories(basePackages = "com.vic.mstelestolists.repositories")
 public class MongoConfig {
 
 	@Bean
-	public MongoClient mongo() throws Exception {
+	public MongoClient mongo() {
 		final ConnectionString connectionString = new ConnectionString("mongodb://localhost:27017");
 		final MongoClientSettings mongoClientSettings = MongoClientSettings.builder().applyConnectionString(connectionString).build();
 		return MongoClients.create(mongoClientSettings);
 	}
 
 	@Bean
-	public MongoTemplate mongoTemplate() throws Exception {
+	public MongoTemplate mongoTemplate() {
 		return new MongoTemplate(mongo(), "camera");
 	}
 }

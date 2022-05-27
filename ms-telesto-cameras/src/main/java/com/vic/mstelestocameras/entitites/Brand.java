@@ -1,5 +1,4 @@
-package com.vic.driver.entities;
-
+package com.vic.mstelestocameras.entitites;
 
 import com.vic.common.CommonEntity;
 

@@ -6,6 +6,11 @@
     <modules>
         <module>common</module>
         <module>driver</module>
+        <module>ms-telesto-zones</module>
+        <module>ms-telesto-cameras</module>
+        <module>ms-telesto-detections</module>
+        <module>ms-telesto-drivers</module>
+        <module>ms-telesto-lists</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

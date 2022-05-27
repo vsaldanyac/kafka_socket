@@ -1,9 +1,9 @@
-package com.vic.driver.entities;
+package com.vic.mstelestocameras.entitites;
 
 import com.vic.common.CommonEntity;
-import com.vic.driver.entities.enums.Status;
+import com.vic.mstelestocameras.entitites.enums.Severity;
+import com.vic.mstelestocameras.entitites.enums.Status;
 
-import javax.print.attribute.standard.Severity;
 import javax.xml.stream.Location;
 import java.util.Map;
 

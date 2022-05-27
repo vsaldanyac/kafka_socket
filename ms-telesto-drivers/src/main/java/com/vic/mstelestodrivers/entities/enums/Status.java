@@ -1,5 +1,6 @@
-package com.vic.driver.entities.enums;
+package com.vic.mstelestodrivers.entities.enums;
 
 public enum Status {
 	CONNECTED, DISCONNECTED, ABNORMAL, UNKNOWN
 }
+
